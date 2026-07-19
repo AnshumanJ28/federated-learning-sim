@@ -15,6 +15,12 @@ Streamlit, Opacus (optional)
 > dashboard, and containerized the final model-serving API with Docker and
 > docker-compose for reproducible deployment.
 
+## Screenshots
+
+| Dashboard | Serving API |
+|---|---|
+| ![Dashboard](./S1%20(1).png) | ![Serving API](./S1%20(2).png) |
+
 ## Setup
 
 ```bash
@@ -24,43 +30,36 @@ pip install -r requirements.txt
 ## Run the experiments
 
 **1. Build partitions (IID + non-IID)**
-
 ```bash
 python -m data.partition
 ```
 
 **2. Centralized baseline**
-
 ```bash
 python -m baseline.centralized_train --epochs 10
 ```
 
 **3. Federated — full participation, IID**
-
 ```bash
 python -m fl.server --partition iid --rounds 20 --num-clients 10
 ```
 
 **4. Federated — non-IID comparison**
-
 ```bash
 python -m fl.server --partition non_iid --rounds 20 --num-clients 10
 ```
 
 **5. Federated — client dropout (60% participation per round)**
-
 ```bash
 python -m fl.server --partition non_iid --rounds 20 --fraction-fit 0.6
 ```
 
 **6. Federated — with differential privacy**
-
 ```bash
 python -m fl.server --partition iid --rounds 20 --use-dp
 ```
 
 Each run logs params/metrics to MLflow (`./mlruns`). View them with:
-
 ```bash
 mlflow ui
 ```
@@ -85,7 +84,6 @@ uvicorn main:app --reload
 ```
 
 Or via Docker (serving API + dashboard together):
-
 ```bash
 docker compose up --build
 ```
@@ -113,7 +111,6 @@ federated-learning-sim/
 ```
 
 ## Stretch ideas
-
 - Swap FedAvg for FedProx and compare convergence on non-IID data
 - Add a GitHub Actions workflow to rebuild/push the Docker image on commit
 - Deploy the serving API to Render or a similar free-tier host
