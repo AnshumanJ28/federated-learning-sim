@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+fl_env/
+.venv/
+
+# Data & generated artifacts
+data/raw/
+data/partitions/
+mlruns/
+mlartifacts/
+serving/model_store/*.pt
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env files
+.env

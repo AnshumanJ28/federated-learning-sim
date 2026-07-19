@@ -1,0 +1,12 @@
+torch
+torchvision
+flwr[simulation]
+mlflow
+fastapi
+uvicorn
+streamlit
+scikit-learn
+numpy
+pandas
+matplotlib
+opacus

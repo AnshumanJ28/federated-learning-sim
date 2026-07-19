@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+mlruns/
+notebooks/
+data/raw/
+data/partitions/
+.git/
+.env

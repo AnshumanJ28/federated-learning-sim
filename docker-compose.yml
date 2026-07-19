@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  fl-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount the checkpoint directory so a newly trained model can be
+      # swapped in (e.g. after another FedAvg run) without rebuilding the image.
+      - ./serving/model_store:/app/model_store
+    environment:
+      - MODEL_PATH=/app/model_store/global_model.pt
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: dashboard/Dockerfile
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./mlruns:/app/mlruns
+    depends_on:
+      - fl-api
