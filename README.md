@@ -44,14 +44,14 @@ client participation) that show up in real federated systems.
 
 ## Features
 
-- 🧠 **FedAvg simulation** across N virtual clients using [Flower](https://flower.ai/)
-- ⚖️ **IID vs. non-IID** data partitioning for direct comparison
-- 📉 **Centralized baseline** to quantify the federated "cost"
-- 🔌 **Client dropout modeling** — simulate partial participation per round
-- 🔒 **Optional differential privacy** layer via Opacus
-- 📊 **MLflow experiment tracking** for every run (params + metrics)
-- 📈 **Streamlit dashboard** comparing accuracy curves side by side
-- 🚀 **Dockerized FastAPI serving** for the final global model
+- **FedAvg simulation** across N virtual clients using [Flower](https://flower.ai/)
+- **IID vs. non-IID** data partitioning for direct comparison
+- **Centralized baseline** to quantify the federated "cost"
+- **Client dropout modeling** — simulate partial participation per round
+- **Optional differential privacy** layer via Opacus
+- **MLflow experiment tracking** for every run (params + metrics)
+- **Streamlit dashboard** comparing accuracy curves side by side
+- **Dockerized FastAPI serving** for the final global model
 
 ## Screenshots
 
